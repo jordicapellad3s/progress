@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* @media screen and (display-mode: standalone) {
+  header {
+    height: 48px !important;
+  }
+} */
+
+
+body {  
+  background-color: #f4d0e6;
+  background-image: linear-gradient(49deg, #f4d0e6 0%, #f8d8b1 100%);   
+}
