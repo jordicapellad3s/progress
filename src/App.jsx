@@ -73,9 +73,9 @@ function App() {
           {date}th, {year}
         </span>
         <h1 className="font-bold text-4xl md:text-6xl">{greeting}</h1>
-        <div className="mt-4">
-          <span className="opacity-50">Week of the year:</span>
-          <span className="font-bold"> {week}</span>
+        <div className="mt-4 font-bold">
+          <span className="opacity-50">Week number:</span>
+          <span className=""> {week}</span>
         </div>
         <div className="mt-4">
           <span className="font-bold opacity-50">Week Progress</span>
