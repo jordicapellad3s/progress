@@ -2,10 +2,14 @@ import dayjs from "dayjs";
 import weekYear from "dayjs/plugin/weekYear";
 import weekOfYear from "dayjs/plugin/weekOfYear";
 import isoWeek from "dayjs/plugin/isoWeek";
+import dayOfYear from "dayjs/plugin/dayOfYear";
+import isLeapYear from "dayjs/plugin/isLeapYear";
 
 dayjs.extend(weekOfYear);
 dayjs.extend(weekYear);
 dayjs.extend(isoWeek);
+dayjs.extend(dayOfYear);
+dayjs.extend(isLeapYear);
 
 // get the current date like Satuday, March 20th, 2021
 const date = dayjs().format("dddd, MMMM D");
@@ -53,6 +57,13 @@ const endOfWeek = dayjs().endOf("week");
 const progressWeek =
   (dayjs().diff(startOfWeek, "day") / endOfWeek.diff(startOfWeek, "day")) * 100;
 
+// get the total number of days in the current year
+const daysInYear = dayjs().dayOfYear();
+// is the current date a leap year?
+const leapYear = dayjs().isLeapYear();
+// if it is a leap year, the total number of days in the year is 366 days else 365 days
+const numberOfdays = leapYear ? 366 : 365;
+
 function App() {
   return (
     <>
@@ -96,6 +107,9 @@ function App() {
               id="progress-bar"
             ></div>
           </div>
+          <span className="font-bold opacity-50">
+            {daysInYear} / {numberOfdays}
+          </span>
         </div>
       </main>
     </>
